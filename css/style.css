@@ -45,13 +45,19 @@ h1,h2,h3,p{
   padding: 20px;
   margin-bottom: 10px;
 }
-.box-profile{
-  width: 32%;
-} 
 .box-tweet{
   width: 67%;
 }
+.box-tweet p{
+  padding-top: 30px;
+  font-size: 22px;
+  color: #1da1f2;
+  font-weight: 700;
+  display: inline-block;
+  float: right;
+}
 .box-profile{
+  width: 32%;
   display:flex;
   justify-content: space-around;
   align-items: center;
@@ -83,7 +89,9 @@ h1,h2,h3,p{
   color: #1da1f2;
 }
 .tweet-input{
-  padding: 0 490px 80px 0;
+  overflow: hidden;
+  resize: vertical;
+  width: 100%;
   border-bottom: 2px solid #c1c1c1;
 }
 .tweet-input::placeholder{
