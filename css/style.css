@@ -108,3 +108,7 @@ h1,h2,h3,p{
   background-color: #0E4C72;
   cursor: pointer;
 }
+.btn:disabled{
+  background-color: #c1c1c1;
+  cursor: not-allowed;
+}
