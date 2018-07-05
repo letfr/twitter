@@ -1,17 +1,16 @@
+// VARIÁVEIS GLOBAIS
 var tweets = document.querySelector(".tweets");
 var button = document.querySelector(".btn");
 var tweetsNumber = document.querySelector(".count-tweets");
 var tweetInput = document.querySelector(".tweet-input");
 var numberChar = document.querySelector(".numberChar");
 var maxChar = 140;
-var div;
-var paragrafh;
-var count = 0;
+var valueLength;
 
 // FUNÇÃO AO CLICAR NO BOTÃO TWEET
 function addTweet(){
-  div = document.createElement("div");
-  paragrafh = document.createElement("p");
+  var div = document.createElement("div");
+  var paragrafh = document.createElement("p");
   paragrafh.textContent = tweetInput.value;
   div.prepend(paragrafh);
   tweets.prepend(div);
@@ -21,34 +20,45 @@ button.addEventListener("click",addTweet);
 
 // EVENTO DE BOTÃO
 function buttonClick(){
+  var count = 0;
   tweetsNumber.textContent = count += 1;
-  button.disabled = true;
   document.querySelector(".tweet-input").value = "";
-  maxChar = 140;
   numberChar.textContent = maxChar;
 }
 button.addEventListener("click",buttonClick);
 
 // CONTADOR DE CARACTERES
 function insertChar(event){
-  char = event.keyCode;
-  if(char !== 8){
-    numberChar.textContent = (maxChar -= 1);
-    return maxChar;
+  valueLength = document.querySelector(".tweet-input").value.length;
+  if(valueLength){
+    numberChar.textContent = maxChar - valueLength;
   } else if (tweetInput.value === ""){
-    return maxChar;
-  } else {
-    numberChar.textContent = (maxChar += 1);
-    return maxChar;
+    numberChar.textContent = maxChar;
   }
 }
-tweetInput.addEventListener("keydown",insertChar);
+tweetInput.addEventListener("keyup",insertChar);
+
+// CORES DO CONTADOR
+function changeColorCount(){
+  valueLength = document.querySelector(".tweet-input").value.length;
+  if(valueLength >= 120 && valueLength < 130){
+    numberChar.style.color = "yellow";
+  } else if(valueLength >= 130 && valueLength < 140){
+    numberChar.style.color = "red";
+  } else if(valueLength > 140){
+    numberChar.style.color = "#c1c1c1";
+  } else if(valueLength < 120){
+    numberChar.style.color = "#1da1f2";
+  }
+}
+setInterval(changeColorCount, 1);
 
 // FUNÇÃO DESATIVA/ATIVA BOTÃO TWEET
 function disable(){
-    if (tweetInput.value !== ""){
+  var valueLength = document.querySelector(".tweet-input").value.length;
+    if (tweetInput.value !== "" && valueLength <= 140){
       button.removeAttribute("disabled", "false");
-    } else if (tweetInput.value === ""){
+    } else if (tweetInput.value === "" || valueLength > 140){
       button.setAttribute("disabled", "true");
     }
 }

@@ -38,6 +38,7 @@ h1,h2,h3,p{
   display: flex;
   justify-content: space-between;
   padding: 20px 0 10px 0;
+  align-items: flex-start;
 }
 .box{
   background-color: #fff;
@@ -47,6 +48,7 @@ h1,h2,h3,p{
 }
 .box-tweet{
   width: 67%;
+  min-height: 178px;
 }
 .box-tweet p{
   padding-top: 30px;
@@ -58,6 +60,7 @@ h1,h2,h3,p{
 }
 .box-profile{
   width: 32%;
+  height: 178px;
   display:flex;
   justify-content: space-around;
   align-items: center;
