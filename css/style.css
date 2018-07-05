@@ -7,10 +7,8 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body{
-  background-color: #1da1f2;
-  background-image: linear-gradient(0deg, #1da1f2 0%, #e2f5fd 35%, #ffffff 73%);         
-  background-repeat: no-repeat;
-  height: 600px;
+  background-image: url("../images/escheresque.png");
+
 }
 h1,h2,h3,p{
   color: #363636;
@@ -26,9 +24,9 @@ h1,h2,h3,p{
 .header a{
   display: flex;
   justify-content: center;
-  font-size: 45px;
+  font-size: 35px;
   color: #fff;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-property: transform;
 }
 .header a:hover{
@@ -45,18 +43,45 @@ h1,h2,h3,p{
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
   padding: 20px;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 .box-tweet{
   width: 67%;
   min-height: 178px;
 }
 .box-tweet p{
-  padding-top: 30px;
+  padding-top: 20px;
   font-size: 22px;
   color: #1da1f2;
   font-weight: 700;
   display: inline-block;
   float: right;
+}
+.tweets .box{
+  padding: 20px 50px;
+  font-size: 18px;
+  overflow: auto;
+  position: relative;
+}
+.tweets .box p{
+  position: absolute;
+  top: 60px;
+  left: 170px;
+}
+.tweets .box small{
+  display: block;
+  text-align: end;
+  color: #363636;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.tweets .box h2{
+  display: inline-block;
+  font-size: 14px;
+  position: absolute;
+  top: 35px;
+  left: 145px;
 }
 .box-profile{
   width: 32%;
@@ -72,6 +97,13 @@ h1,h2,h3,p{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  transform: scale(1);
+  transition: .3s ease-in-out;
+  display: inline-block;
+}
+.img-profile:hover{
+  cursor: pointer;
+	transform: scale(1.2);
 }
 .profile-data h1{
   font-weight: 600;
@@ -92,8 +124,9 @@ h1,h2,h3,p{
   color: #1da1f2;
 }
 .tweet-input{
+  resize: none;
+  font-size: 18px;
   overflow: hidden;
-  resize: vertical;
   width: 100%;
   border-bottom: 2px solid #c1c1c1;
 }
@@ -105,21 +138,26 @@ h1,h2,h3,p{
   outline: 0;
 }
 .btn{
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px 20px;
   background-color: #1da1f2;
   font-weight: 600;
   color: #fff;
   border-radius: 25px;
 }
-.btn:focus{
-  outline: 0;
-}
-.btn:hover{
+.btn:hover, .btn:focus{
   background-color: #0E4C72;
   cursor: pointer;
+  outline: 0;
 }
 .btn:disabled{
   background-color: #c1c1c1;
   cursor: not-allowed;
+}
+.tweets .img-profile{
+  width: 80px;
+  height: 80px;
+}
+.tweets .img-profile:hover{
+  transform: none;
 }

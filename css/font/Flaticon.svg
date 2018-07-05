@@ -1,16 +1,16 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <!--
-2018-7-4: Created with FontForge (http://fontforge.org)
+2018-7-5: Created with FontForge (http://fontforge.org)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20160405 at Wed Jul  4 02:50:54 2018
+Created by FontForge 20160405 at Thu Jul  5 05:27:01 2018
  By Apache
 Copyright (c) 2018, Apache
 </metadata>
 <defs>
-<font id="Flaticon" horiz-adv-x="200" >
+<font id="Flaticon" horiz-adv-x="512" >
   <font-face 
     font-family="Flaticon"
     font-weight="400"
@@ -22,12 +22,15 @@ Copyright (c) 2018, Apache
     bbox="0 -64 512 448"
     underline-thickness="25.6"
     underline-position="-51.2"
-    unicode-range="U+0020-F100"
+    unicode-range="U+0020-F101"
   />
     <missing-glyph />
-    <glyph glyph-name="space" unicode=" " 
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="200" 
  />
-    <glyph glyph-name="uniF100" unicode="&#xf100;" horiz-adv-x="512" 
+    <glyph glyph-name="uniF100" unicode="&#xf100;" 
+d="M512 275.496c0 -41.5752 -18.4248 -78.7695 -47.4609 -104.099l-195.924 -195.932c-3.3457 -3.3457 -7.88379 -5.22559 -12.6172 -5.22559c-4.73242 0 -9.27051 1.87988 -12.6172 5.22559l-195.923 195.932c-29.0352 25.3291 -47.458 62.5234 -47.458 104.099
+c0 76.3613 61.8867 138.263 138.248 138.263c49.8623 0 93.4268 -26.4814 117.75 -66.0566c24.3271 39.5752 67.873 66.0566 117.736 66.0566c76.3613 0 138.266 -61.9014 138.266 -138.263z" />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
 d="M256 448c141.168 0 256 -114.842 256 -256c0 -141.147 -114.853 -256 -256 -256c-141.158 0 -256 114.853 -256 256c0 141.158 114.842 256 256 256zM370.203 250.592c11.5176 8.28027 21.5098 18.6641 29.3672 30.4609
 c-10.5283 -4.69238 -21.9121 -7.84766 -33.8428 -9.27051c12.1992 7.30078 21.5107 18.8398 25.9443 32.6055c-11.415 -6.77441 -23.9951 -11.6621 -37.4316 -14.3018c-10.7656 11.4453 -26.0576 18.6025 -43.0107 18.6025c-32.5332 0 -58.9111 -26.3887 -58.9111 -58.9219
 c0 -4.62988 0.505859 -9.11523 1.5166 -13.4365c-48.9609 2.47461 -92.3936 25.9238 -121.442 61.582c-5.07324 -8.70312 -7.9707 -18.8291 -7.9707 -29.6357c0 -20.4385 10.4043 -38.4834 26.2021 -49.0322c-9.65137 0.298828 -18.7363 2.95898 -26.6768 7.3623

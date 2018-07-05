@@ -5,27 +5,43 @@ var tweetsNumber = document.querySelector(".count-tweets");
 var tweetInput = document.querySelector(".tweet-input");
 var numberChar = document.querySelector(".numberChar");
 var maxChar = 140;
+var count = 0;
 var valueLength;
 
 // FUNÇÃO AO CLICAR NO BOTÃO TWEET
 function addTweet(){
+  // criando a div do tweet
   var div = document.createElement("div");
-  var paragrafh = document.createElement("p");
-  paragrafh.textContent = tweetInput.value;
-  div.prepend(paragrafh);
   tweets.prepend(div);
   div.setAttribute("class","box");
+  // imagem do perfil
+  var newImg = document.createElement("div");
+  newImg.setAttribute("class","img-profile");
+  div.appendChild(newImg);
+  // username
+  var h2 = document.createElement("h2");
+  h2.textContent = "@letzsays: ";
+  div.appendChild(h2);
+  // conteúdo inserido no input
+  var paragrafh = document.createElement("p");
+  paragrafh.textContent = tweetInput.value;
+  div.appendChild(paragrafh);
+  // data e horário da publicação
+  var hour = document.createElement("small");
+  hour.textContent = moment().format('Do MMMM YYYY, h:mm a');
+  div.appendChild(hour);
 }
 button.addEventListener("click",addTweet);
 
 // EVENTO DE BOTÃO
 function buttonClick(){
-  var count = 0;
   tweetsNumber.textContent = count += 1;
   document.querySelector(".tweet-input").value = "";
   numberChar.textContent = maxChar;
+  tweetInput.style.height = "85px";
 }
 button.addEventListener("click",buttonClick);
+
 
 // CONTADOR DE CARACTERES
 function insertChar(event){
