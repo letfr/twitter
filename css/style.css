@@ -60,13 +60,12 @@ h1,h2,h3,p{
 .tweets .box{
   padding: 20px 50px;
   font-size: 18px;
-  overflow: auto;
   position: relative;
 }
 .tweets .box p{
-  position: absolute;
-  top: 60px;
-  left: 170px;
+  margin: 5px 0 0 120px;
+  display: block;
+  word-wrap: break-word;
 }
 .tweets .box small{
   display: block;
@@ -79,9 +78,7 @@ h1,h2,h3,p{
 .tweets .box h2{
   display: inline-block;
   font-size: 14px;
-  position: absolute;
-  top: 35px;
-  left: 145px;
+  margin: 10px 0 0 100px;
 }
 .box-profile{
   width: 32%;
@@ -157,6 +154,8 @@ h1,h2,h3,p{
 .tweets .img-profile{
   width: 80px;
   height: 80px;
+  position: absolute;
+  top: 15px;
 }
 .tweets .img-profile:hover{
   transform: none;

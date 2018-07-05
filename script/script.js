@@ -52,7 +52,9 @@ function insertChar(event){
     numberChar.textContent = maxChar;
   }
 }
-tweetInput.addEventListener("keyup",insertChar);
+tweetInput.addEventListener("keydown",insertChar);
+tweetInput.addEventListener("keyup",insertChar);  
+tweetInput.addEventListener("keypress",insertChar);
 
 // CORES DO CONTADOR
 function changeColorCount(){
