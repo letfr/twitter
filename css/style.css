@@ -7,8 +7,10 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body{
-  background-image: url("../images/escheresque.png");
-
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 h1,h2,h3,p{
   color: #363636;
@@ -16,21 +18,28 @@ h1,h2,h3,p{
 }
 .content{
   padding: 0 160px;
+  margin-top: 50px;
+}
+header{
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
+  z-index: 1;
 }
 .header{
   background-color: #1da1f2;
-  padding: 5px 0;
+  padding: 2px 0;
 }
 .header a{
   display: flex;
   justify-content: center;
-  font-size: 35px;
+  font-size: 40px;
   color: #fff;
-  transition-duration: 0.2s;
-  transition-property: transform;
 }
 .header a:hover{
-  transform: scale(1.1);
+  animation: roll .4s infinite;
+  animation-direction: alternate;
 }
 .box-content{
   display: flex;
@@ -43,7 +52,7 @@ h1,h2,h3,p{
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
   padding: 20px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .box-tweet{
   width: 67%;
@@ -56,14 +65,21 @@ h1,h2,h3,p{
   font-weight: 700;
   display: inline-block;
   float: right;
+  transition: color 0.5s ease-out;
 }
 .tweets .box{
   padding: 20px 50px;
   font-size: 18px;
   position: relative;
+  padding-left: 135px;
+  transition: box-shadow 0.2s ease-out;
+  animation: fadeIn 0.8s ease-in-out;
+}
+.tweets .box:hover{
+  box-shadow: 0 8px 25px 0 rgba(0,0,0,0.4);
 }
 .tweets .box p{
-  margin: 5px 0 0 120px;
+  margin: 5px 0 10px 15px;
   display: block;
   word-wrap: break-word;
 }
@@ -78,7 +94,6 @@ h1,h2,h3,p{
 .tweets .box h2{
   display: inline-block;
   font-size: 14px;
-  margin: 10px 0 0 100px;
 }
 .box-profile{
   width: 32%;
@@ -89,18 +104,15 @@ h1,h2,h3,p{
   padding: 0 30px;
 }
 .img-profile{
-  background-image: url("../images/profile.jpg");
+  background-image: url("../images/profile.jpeg");
   background-size: cover;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  transform: scale(1);
-  transition: .3s ease-in-out;
   display: inline-block;
 }
 .img-profile:hover{
   cursor: pointer;
-	transform: scale(1.2);
 }
 .profile-data h1{
   font-weight: 600;
@@ -140,10 +152,11 @@ h1,h2,h3,p{
   background-color: #1da1f2;
   font-weight: 600;
   color: #fff;
-  border-radius: 25px;
+  border-radius: 20px;
+  transition: background 0.4s ease-out;
 }
 .btn:hover, .btn:focus{
-  background-color: #0E4C72;
+  background-color: #0F557F;
   cursor: pointer;
   outline: 0;
 }
@@ -156,7 +169,17 @@ h1,h2,h3,p{
   height: 80px;
   position: absolute;
   top: 15px;
+  left: 40px;
 }
-.tweets .img-profile:hover{
-  transform: none;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
 }

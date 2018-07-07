@@ -1,34 +1,37 @@
+window.onload = function(){
+
 // VARIÁVEIS GLOBAIS
-var tweets = document.querySelector(".tweets");
-var button = document.querySelector(".btn");
-var tweetsNumber = document.querySelector(".count-tweets");
-var tweetInput = document.querySelector(".tweet-input");
-var numberChar = document.querySelector(".numberChar");
-var maxChar = 140;
-var count = 0;
-var valueLength;
+let tweets = document.querySelector(".tweets");
+let button = document.querySelector(".btn");
+let tweetsNumber = document.querySelector(".count-tweets");
+let tweetInput = document.querySelector(".tweet-input");
+let numberChar = document.querySelector(".numberChar");
+let maxChar = 140;
+let count = 0;
+let valueLength;
 
 // FUNÇÃO AO CLICAR NO BOTÃO TWEET
 function addTweet(){
   // criando a div do tweet
-  var div = document.createElement("div");
+  let div = document.createElement("div");
   tweets.prepend(div);
   div.setAttribute("class","box");
   // imagem do perfil
-  var newImg = document.createElement("div");
+  let newImg = document.createElement("div");
   newImg.setAttribute("class","img-profile");
   div.appendChild(newImg);
   // username
-  var h2 = document.createElement("h2");
-  h2.textContent = "@letzsays: ";
+  let h2 = document.createElement("h2");
+  let user = document.querySelector("h2")
+  h2.textContent = user.textContent + ":";
   div.appendChild(h2);
   // conteúdo inserido no input
-  var paragrafh = document.createElement("p");
-  paragrafh.textContent = tweetInput.value;
-  div.appendChild(paragrafh);
+  let paragraph = document.createElement("p");
+  paragraph.textContent = tweetInput.value;
+  div.appendChild(paragraph);
   // data e horário da publicação
-  var hour = document.createElement("small");
-  hour.textContent = moment().format('Do MMMM YYYY, h:mm a');
+  let hour = document.createElement("small");
+  hour.textContent = moment().format('LLL');
   div.appendChild(hour);
 }
 button.addEventListener("click",addTweet);
@@ -36,7 +39,7 @@ button.addEventListener("click",addTweet);
 // EVENTO DE BOTÃO
 function buttonClick(){
   tweetsNumber.textContent = count += 1;
-  document.querySelector(".tweet-input").value = "";
+  tweetInput.value = "";
   numberChar.textContent = maxChar;
   tweetInput.style.height = "85px";
 }
@@ -73,7 +76,7 @@ setInterval(changeColorCount, 1);
 
 // FUNÇÃO DESATIVA/ATIVA BOTÃO TWEET
 function disable(){
-  var valueLength = document.querySelector(".tweet-input").value.length;
+  let valueLength = document.querySelector(".tweet-input").value.length;
     if (tweetInput.value !== "" && valueLength <= 140){
       button.removeAttribute("disabled", "false");
     } else if (tweetInput.value === "" || valueLength > 140){
@@ -95,13 +98,13 @@ function addEvent(type, el, callback)
 }
 
 function resizeTextfield(el){
-  var timer;
+  let timer;
   function trigger() {
     if (!el) {
       return; 
     }
     el.style.height = "auto";
-    var height = el.scrollHeight;
+    let height = el.scrollHeight;
     el.style.height = height + "px";
   }
   function exec() {
@@ -114,9 +117,11 @@ function resizeTextfield(el){
   addEvent("input", el, exec);
 }
 window.onload = function () {
-  var els = document.getElementsByClassName("increase");
-  for (var i = els.length - 1; i >= 0; i--) {
+  let els = document.getElementsByClassName("increase");
+  for (let i = els.length - 1; i >= 0; i--) {
   resizeTextfield(els[i]);
   }
 };
 setInterval(resizeTextfield(tweetInput),1);
+
+};
