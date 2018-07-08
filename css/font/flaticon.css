@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 05/07/2018 05:27
+  	Creation date: 08/07/2018 23:42
   	*/
 
 @font-face {
@@ -25,7 +25,9 @@
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
 font-style: normal;
+
 }
 
-.flaticon-valentines-heart:before { content: "\f100"; }
-.flaticon-twitter-logo-button:before { content: "\f101"; }
+.flaticon-save:before { content: "\f100"; }
+.flaticon-edit:before { content: "\f101"; }
+.flaticon-twitter-logo-button:before { content: "\f102"; }

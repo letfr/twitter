@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 05/07/2018 05:27
+    Creation date: 08/07/2018 23:42
     */
 
     @font-face {
@@ -36,8 +36,10 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-valentines-heart:before { content: "\f100"; }
-.flaticon-twitter-logo-button:before { content: "\f101"; }
+    .flaticon-save:before { content: "\f100"; }
+.flaticon-edit:before { content: "\f101"; }
+.flaticon-twitter-logo-button:before { content: "\f102"; }
     
-    $font-Flaticon-valentines-heart: "\f100";
-    $font-Flaticon-twitter-logo-button: "\f101";
+    $font-Flaticon-save: "\f100";
+    $font-Flaticon-edit: "\f101";
+    $font-Flaticon-twitter-logo-button: "\f102";

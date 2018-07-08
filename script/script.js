@@ -33,6 +33,8 @@ function addTweet(){
   let hour = document.createElement("small");
   hour.textContent = moment().format('LLL');
   div.appendChild(hour);
+
+  return div;
 }
 button.addEventListener("click",addTweet);
 
@@ -45,9 +47,8 @@ function buttonClick(){
 }
 button.addEventListener("click",buttonClick);
 
-
 // CONTADOR DE CARACTERES
-function insertChar(event){
+function insertChar(){
   valueLength = document.querySelector(".tweet-input").value.length;
   if(valueLength){
     numberChar.textContent = maxChar - valueLength;
@@ -123,5 +124,37 @@ window.onload = function () {
   }
 };
 setInterval(resizeTextfield(tweetInput),1);
+
+// MUDANDO INFORMAÇÕES DO PROFILE
+let name = document.querySelector(".name");
+let user = document.querySelector(".username");
+let btnEdit = document.querySelector(".edit");
+let btnSave = document.querySelector(".save");
+
+function edit(){
+  let inputName = document.createElement("input");
+  let inputUser = document.createElement("input");
+  inputName.setAttribute("id","newName");
+  inputUser.setAttribute("id","newUser");
+  name.appendChild(inputName);
+  user.appendChild(inputUser);
+  inputName.setAttribute("placeholder","Novo nome");
+  inputUser.setAttribute("placeholder","Novo usuário");
+  btnSave.style.display = "inline";
+  btnEdit.style.display = "none";
+}
+btnEdit.addEventListener("click",edit);
+
+function save(){
+  let inputNameValue = document.getElementById("newName");
+  let inputUserValue = document.getElementById("newUser");
+  name.removeChild(inputNameValue);
+  user.removeChild(inputUserValue);
+  if (inputNameValue.value !== ""){ name.textContent = inputNameValue.value; }
+  if (inputUserValue.value !== ""){ user.textContent = "@" + inputUserValue.value; }
+  btnSave.style.display = "none";
+  btnEdit.style.display = "inline";
+}
+btnSave.addEventListener("click",save);
 
 };
