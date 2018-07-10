@@ -135,10 +135,11 @@ header{
 .profile-data input{
   display: inline-block;
   width: 140px;
-  border: 1px solid #1da1f2;
-  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid #1da1f2;
   padding: 3px 0;
   margin: 5px 0;
+  outline: 0;
 }
 .edit, .save{
   font-size: 18px;
