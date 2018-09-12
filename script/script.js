@@ -6,18 +6,16 @@ let setFunctions = () => {
   const btnEdit = $(".edit");
   const btnSave = $(".save");
   const numberChar = $(".numberChar");
-  const valueLength;
+  let valueLength;
   const maxChar = 140;
 
-  $(".btn").on("click", addTweet).click( () => buttonClick(numberChar));
+  $(".btn").on("click", addTweet).click( () => buttonClick(maxChar,numberChar));
   $(".tweet-input").bind("keyup keydown keypress", () => insertChar(numberChar, valueLength, maxChar));
   btnEdit.click( () => edit($(".name"), $(".username"), btnSave, btnEdit));
   btnSave.click( () => save($(".name"), $(".username"), btnSave, btnEdit));
 
   setInterval( () => changeColorCount(numberChar, valueLength, maxChar), 1);
   setInterval(disable, 1);
-  setInterval(resizeTextfield($(".tweet-input")), 1);
-
 }
 
 // FUNÇÃO AO CLICAR NO BOTÃO TWEET
@@ -33,11 +31,11 @@ var addTweet = () => {
 }
 
 // EVENTO DE BOTÃO
-var buttonClick = () => {
+var buttonClick = (maxChar,numberChar) => {
   let count = 0;
   $(".count-tweets").text(count += 1);
   $(".tweet-input").val("").height("85px");
-  $(".numberChar").text(maxChar);
+  numberChar.text(maxChar);
 }
 
 // CONTADOR DE CARACTERES
@@ -74,7 +72,6 @@ let disable = () => {
   }
 }
 
-
 // REDIMENSIONAMENTO DA CAIXA DE TWEET
 function addEvent(type, el, callback) {
   if (window.addEventListener) {
@@ -86,39 +83,12 @@ function addEvent(type, el, callback) {
   }
 }
 
-function resizeTextfield(el) {
-  let timer;
-  function trigger() {
-    if (!el) {
-      return;
-    }
-    el.style.height = "auto";
-    let height = el.scrollHeight;
-    el.style.height = height + "px";
-  }
-  function exec() {
-    if (timer) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(trigger, 1);
-  }
-  addEvent("keyup", el, exec);
-  addEvent("input", el, exec);
-}
-window.onload = function () {
-  let els = document.getElementsByClassName("increase");
-  for (let i = els.length - 1; i >= 0; i--) {
-    resizeTextfield(els[i]);
-  }
-};
-
 let edit = (name, user, save, edit) => {
   name.append(`<input id="newName" placeholder="Novo nome"></input>`);
   user.append(`<input id="newUser" placeholder="Novo usuário"></input>`);
   save.fadeIn();
   edit.fadeOut(1);
 }
-
 
 let save = (name, user, save, edit) => {
   const inputNameValue = $("#newName");
