@@ -23,7 +23,7 @@ var addTweet = () => {
   let elements = `
   <div class="box">
     <div class="img-profile"></div>
-    <h2>${$("h2").text()}:</h2>
+    <h2>${$(".username").text()}:</h2>
     <p>${$(".tweet-input").val()}</p>
     <small>${moment().format('LLL')}</small>
   </div>`
@@ -31,8 +31,8 @@ var addTweet = () => {
 }
 
 // EVENTO DE BOTÃO
-var buttonClick = (maxChar,numberChar) => {
-  let count = 0;
+let count = 0;
+var buttonClick = (maxChar, numberChar) => {
   $(".count-tweets").text(count += 1);
   $(".tweet-input").val("").height("85px");
   numberChar.text(maxChar);
@@ -84,8 +84,10 @@ function addEvent(type, el, callback) {
 }
 
 let edit = (name, user, save, edit) => {
-  name.append(`<input id="newName" placeholder="Novo nome"></input>`);
-  user.append(`<input id="newUser" placeholder="Novo usuário"></input>`);
+  $(".name").text("");
+  $(".username").text("");
+  name.append(`<input id="newName" maxlength="14" placeholder="Novo nome"></input>`);
+  user.append(`<input id="newUser" maxlength="10" placeholder="Novo usuário"></input>`);
   save.fadeIn();
   edit.fadeOut(1);
 }
