@@ -12,7 +12,7 @@ body{
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover 100vh;
-  /* background-attachment: scroll; */
+  background-attachment: fixed;
 }
 h1,h2,h3,p{
   color: #363636;
